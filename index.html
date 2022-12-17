@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Eczar|Lobster+Two|Source+Code+Pro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Markdown Previewer</title>
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+  <div class="fluid-container">
+    <div class="row">
+
+      <div id="title" class="text-center col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+        <div data-reactroot="">
+          <h1 class="heading-text-one">Markdown Previewer</h1>
+          <h5 class="heading-text-two"><!-- react-text: 4 -->Coded by <!-- /react-text --><a target="_blank"
+              href="https://github.com/hoodaddeveloper/Markdown-Previewer">HoodadDevelopper</a></h5>
+        </div>
+      </div>
+
+      <div id="markdown-container" class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+        <div data-reactroot="">
+          <div class="rounded-corners container-class col-xs-12 col-md-6">
+            <h4>Markdown Input</h4>
+            <hr><textarea class="markdown-text">## This is some markdown
+              ### Consider making your own
+
+              #### List items
+              - George
+              - Paul
+              - Ringo
+              - John
+
+              #### Make it **bold** or make it *italic*
+
+              #### Create links [Github](https://github.com/PappuKP)</textarea>
+            <hr>
+            <div>
+              <h5 class="heading-text-one">Use ## before text to create an h2.</h5>
+            </div>
+          </div>
+          <div class="rounded-corners container-class col-xs-12 col-md-6">
+            <div>
+              <h4>Markdown Output</h4>
+              <hr>
+              <div>
+                <h2 id="this-is-some-markdown">This is some markdown</h2>
+                <h3 id="consider-making-your-own">Consider making your own</h3>
+                <h4 id="list-items">List items</h4>
+                <ul>
+                  <li>George</li>
+                  <li>Paul</li>
+                  <li>Ringo</li>
+                  <li>John</li>
+                </ul>
+                <h4 id="make-it-bold-or-make-it-italic-">Make it <strong>bold</strong> or make it <em>italic</em></h4>
+                <h4 id="create-links-github-https-github-com-pappukp-">Create links <a
+                    href="https://github.com/PappuKP">Github</a></h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- row -->
+  </div> <!-- fluid-container -->
+  <!-- partial -->
+  <script src="app.js"></script>
+
+  <!-- Code injected by live-server -->
+  <script>
+    // <![CDATA[  <-- For SVG support
+    if ('WebSocket' in window) {
+      (function () {
+        function refreshCSS() {
+          var sheets = [].slice.call(document.getElementsByTagName("link"));
+          var head = document.getElementsByTagName("head")[0];
+          for (var i = 0; i < sheets.length; ++i) {
+            var elem = sheets[i];
+            var parent = elem.parentElement || head;
+            parent.removeChild(elem);
+            var rel = elem.rel;
+            if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+              var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+              elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+            }
+            parent.appendChild(elem);
+          }
+        }
+        var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+        var address = protocol + window.location.host + window.location.pathname + '/ws';
+        var socket = new WebSocket(address);
+        socket.onmessage = function (msg) {
+          if (msg.data == 'reload') window.location.reload();
+          else if (msg.data == 'refreshcss') refreshCSS();
+        };
+        if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+          console.log('Live reload enabled.');
+          sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+        }
+      })();
+    }
+    else {
+      console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+    }
+	// ]]>
+  </script>
+
+
+</body>
+
+</html>
