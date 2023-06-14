@@ -19,9 +19,9 @@ let Title = React.createClass({
           "a",
           {
             target: "_blank",
-            href: "https://www.freecodecamp.com/pappu_kumar_pashi",
+            href: "https://www.freecodecamp.com/hoodaddeveloper",
           },
-          "Pappu Kumar Pashi"
+          "hoodaddeveloper"
         )
       )
     );
